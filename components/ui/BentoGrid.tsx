@@ -1,5 +1,7 @@
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBG";
+import { GlobeDemo } from "./GridGlobe";
+import { Globe } from "./Globe";
 
 export const BentoGrid = ({
   className,
@@ -44,7 +46,7 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "row-span-1 relative rounded-3xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4",
+        "row-span-1 relative overflow-hidden rounded-3xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4 border-white/[0.1]",
         className
       )}
       style={{
@@ -53,7 +55,7 @@ export const BentoGridItem = ({
       }}
     >
       <div className={`${id === 6} && 'flex 
-      justify-center h-full`}>
+      justify-center h-full`}></div>
         <div className="w-full h-full absolute">
           {img && (
             <img
@@ -87,9 +89,33 @@ export const BentoGridItem = ({
           <div className="font-sans font-bold text-lg lg:text-3xl max-w-96 z-10">
             {title}
           </div>
-        </div>
+        
+        {id === 2 && <GlobeDemo />}
 
-      </div>
+
+        {id === 3 && (
+
+          <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-5">
+            <div className="flex flex-col gap-3 lg:gap-8">
+              {['React.js', 'Next.js', 'TypeScript'].map((item, index) => (
+                <span key={item} className="py-2 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity:100 rounded-lg text-center bg-[#10132E] ">
+                {item}
+               </span> 
+              ))}
+            <span className="py-4 px-3 rounded-lg text-center bg-[#10132E]"/>
+            </div>
+            <div className="flex flex-col gap-3 lg:gap-8">
+            <span className="py-4 px-3 rounded-lg text-center bg-[#10132E]"/>
+              {['Sanity', 'Remix', 'Tailwind'].map((item, index) => (
+                <span key={item} className="py-2 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity:100 rounded-lg text-center bg-[#10132E] ">
+                {item}
+               </span> 
+              ))}
+            </div>
+          </div>
+        )}
+  
+    </div>
     </div>
   );
 };
