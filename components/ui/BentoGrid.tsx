@@ -51,7 +51,7 @@ export const BentoGridItem = ({
 }) => {
 
   const leftLists = ["ReactJS", "Remix", "Typescript"];
-  const rightLists = ["NextJS", "NuxtJS", "GraphQL"];
+  const rightLists = ["Python", "NextJS", "GraphQL"];
 
   const [copied, setCopied] = useState(false);
   const handleCopy = () => {
@@ -91,7 +91,7 @@ export const BentoGridItem = ({
         </div>
         {id === 6 && (
           <BackgroundGradientAnimation>
-            <div className="absolute z-50 flex items-center justify-center text-white font-bold  px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl" />
+            {/*<div className="absolute z-50 flex items-center justify-center text-white font-bold  px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl" />*/}
           </BackgroundGradientAnimation>
         )}
 
